@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>👃 New Nose & 🎂 HBD Yani</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: linear-gradient(145deg, #f7f0fc 0%, #fce4ec 100%);
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0.6rem;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* background sparkles */
+        .sparkle-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .sparkle-bg span {
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background: rgba(200, 180, 255, 0.25);
+            box-shadow: 0 0 20px rgba(200, 150, 255, 0.15);
+            animation: floatGlow 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translateY(0px) scale(0.4); opacity: 0.15; }
+            100% { transform: translateY(-90px) scale(1.4); opacity: 0.5; }
+        }
+
+        /* ---- flip container ---- */
+        .flip-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 800px;
+            perspective: 1200px;
+            min-height: auto;
+            margin: 0.2rem auto;
+        }
+
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            min-height: auto;
+        }
+
+        .flip-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* both faces */
+        .flip-front,
+        .flip-back {
+            position: relative;
+            width: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 40px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            box-shadow: 0 20px 50px rgba(120, 60, 100, 0.12),
+                        0 8px 20px rgba(200, 120, 160, 0.08),
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            background: rgba(255, 248, 250, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            text-align: center;
+            transition: all 0.3s ease;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto;
+            max-height: 96vh;
+            max-height: 96dvh;
+        }
+
+        .flip-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateY(180deg);
+            background: rgba(255, 245, 248, 0.92);
+            padding: 1.2rem 1.2rem 1.5rem;
+        }
+
+        /* ===== PAGE 1: FUNNY NOSE (front) ===== */
+        .nose-icon {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 0.05rem;
+            animation: floatUp 3.5s infinite alternate ease-in-out;
+            display: inline-block;
+        }
+
+        .nose-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #4a2a5e;
+            margin: 0.05rem 0 0.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nose-title .arabic {
+            font-size: 1.8rem;
+            display: block;
+            margin-top: 0.05rem;
+            color: #6b3a7a;
+            font-weight: 700;
+        }
+
+        .nose-graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0.2rem 0 0.25rem;
+            padding: 0.5rem;
+            background: rgba(255, 240, 245, 0.5);
+            border-radius: 60px;
+            border: 3px dashed rgba(249, 115, 22, 0.35);
+            animation: borderPulse 2s infinite alternate;
+            flex-wrap: wrap;
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: rgba(249, 115, 22, 0.25); }
+            100% { border-color: rgba(168, 85, 247, 0.4); }
+        }
+
+        .nose-emoji {
+            font-size: 3.5rem;
+            line-height: 1;
+            animation: floatUp 2.8s infinite alternate ease-in-out;
+            display: inline-block;
+        }
+
+        .nose-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .meme-box {
+            background: rgba(255, 240, 245, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1rem;
+            border-radius: 32px;
+            margin: 0.3rem 0 0.4rem;
+            border: 2px solid rgba(249, 115, 22, 0.15);
+        }
+
+        .meme-box .meme-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #4a2a5e;
+            line-height: 1.4;
+        }
+
+        .meme-box .meme-text .highlight-orange {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+
+        .meme-emoji-row {
+            font-size: 2rem;
+            letter-spacing: 8px;
+            margin: 0.15rem 0 0.15rem;
+            animation: floatUp 3s infinite alternate ease-in-out;
+        }
+
+        .powers-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin: 0.2rem 0 0.3rem;
+        }
+
+        .power-item {
+            background: rgba(255, 215, 230, 0.3);
+            padding: 0.1rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5a2d6e;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .power-item .power-emoji {
+            font-size: 0.9rem;
+        }
+
+        .nose-footer-text {
+            font-size: 0.9rem;
+            color: #7a4a8a;
+            font-weight: 600;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+
+        .nose-footer-text .heart-pulse {
+            color: #e05e7e;
+            animation: pulseStar 1.8s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulseStar {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
+        @keyframes waveFloat {
+            0% { transform: rotate(-5deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        /* ===== PAGE 2: BIRTHDAY (back) - ALL LINES VISIBLE ===== */
+        .header-twins {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.05rem;
+            flex-shrink: 0;
+        }
+
+        .twin-wave {
+            font-size: 2.8rem;
+            line-height: 1;
+            display: inline-block;
+            animation: waveFloat 3s infinite alternate;
+        }
+
+        .twin-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #b34b6e;
+            background: rgba(255, 215, 230, 0.5);
+            padding: 0.05rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .hbd-title {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #b34b6e;
+            text-shadow: 4px 4px 0 #ffd1df, 0 8px 20px rgba(200, 80, 120, 0.15);
+            margin: 0.05rem 0 0;
+            word-break: break-word;
+            flex-shrink: 0;
+        }
+
+        .hbd-title .name-glow {
+            background: linear-gradient(135deg, #d45c7a, #a53b5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            padding: 0 0.1rem;
+        }
+
+        .sub-birthday {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #a55272;
+            background: rgba(255, 215, 225, 0.5);
+            display: inline-block;
+            padding: 0.1rem 1.4rem;
+            border-radius: 60px;
+            margin: 0.1rem 0 0.3rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .bestie-badge {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            margin: 0.15rem 0 0.3rem;
+            padding: 0.2rem 0.8rem;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .badge-emoji {
+            font-size: 1.4rem;
+            animation: floatUp 3s infinite alternate ease-in-out;
+        }
+
+        .badge-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #833c55;
+            letter-spacing: 0.3px;
+        }
+
+        .kayan-name {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.5px;
+            padding: 0 0.1rem;
+        }
+
+        .badge-heart {
+            font-size: 1.4rem;
+            color: #e05e7e;
+            animation: pulseStar 1.8s infinite;
+        }
+
+        .twin-badge-new {
+            background: rgba(255, 215, 230, 0.4);
+            padding: 0.05rem 0.7rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #b34b6e;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .twin-badge-new .wave-small {
+            font-size: 1.2rem;
+            animation: waveFloat 2.5s infinite alternate;
+            display: inline-block;
+        }
+
+        .heart-divider {
+            font-size: 1.6rem;
+            line-height: 1;
+            color: #e05e7e;
+            margin: 0.1rem 0 0.25rem;
+            opacity: 0.6;
+            letter-spacing: 4px;
+            flex-shrink: 0;
+        }
+
+        .message-box {
+            background: rgba(255, 240, 245, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 0.7rem 1rem;
+            border-radius: 28px;
+            margin: 0.2rem 0 0.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            flex-shrink: 0;
+        }
+
+        .message-box p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #3f2a32;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .message-box .highlight {
+            background: linear-gradient(120deg, #ffb7cb 0%, #ffb7cb 40%, transparent 80%);
+            padding: 0 0.2rem;
+            font-weight: 700;
+            color: #972b4e;
+        }
+
+        .emoji-big {
+            font-size: 1.8rem;
+            display: inline-block;
+            margin: 0 0.05rem;
+        }
+
+        .twin-message {
+            background: rgba(255, 215, 235, 0.3);
+            border-radius: 60px;
+            padding: 0.15rem 1rem;
+            display: inline-block;
+            margin: 0.15rem 0 0.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            font-size: 0.95rem;
+            color: #6f3b4f;
+            font-weight: 600;
+            backdrop-filter: blur(2px);
+            flex-shrink: 0;
+        }
+
+        .twin-message .wave-icon {
+            display: inline-block;
+            animation: waveFloat 2s infinite alternate;
+        }
+
+        .ride-or-die {
+            margin: 0.2rem 0 0.1rem;
+            font-size: 1rem;
+            color: #77384e;
+            background: rgba(255, 220, 235, 0.25);
+            padding: 0.15rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(2px);
+            flex-shrink: 0;
+        }
+
+        .closing-sentence {
+            margin: 0.3rem 0 0.3rem;
+            padding: 0.6rem 0.8rem;
+            background: linear-gradient(135deg, rgba(255, 215, 230, 0.4), rgba(255, 240, 248, 0.6));
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            flex-shrink: 0;
+        }
+
+        .closing-sentence p {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #3f2a32;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .closing-sentence .highlight-gold {
+            background: linear-gradient(135deg, #f7b731, #e8850c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .closing-sentence .highlight-pink {
+            color: #b34b6e;
+            font-weight: 700;
+        }
+
+        .closing-sentence .highlight-purple {
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .closing-sentence .big-heart {
+            color: #e05e7e;
+            font-size: 1.2rem;
+            display: inline-block;
+            animation: pulseStar 1.8s infinite;
+        }
+
+        .action-call {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.8rem;
+            margin: 0.3rem 0 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            background: #f9e1ea;
+            border: none;
+            padding: 0.4rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #892f4d;
+            box-shadow: 0 3px 0 #c96f8a, 0 6px 14px rgba(190, 80, 110, 0.12);
+            transition: all 0.1s ease;
+            cursor: default;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 0px 0 #c96f8a, 0 6px 14px rgba(190, 80, 110, 0.08);
+        }
+
+        .btn-emoji {
+            font-size: 1.1rem;
+        }
+
+        .footer-note {
+            margin-top: 0.6rem;
+            font-size: 0.8rem;
+            color: #a35872;
+            letter-spacing: 0.2px;
+            opacity: 0.8;
+            border-top: 1px dashed #ffb7cc;
+            padding-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .footer-note strong {
+            font-weight: 700;
+            color: #9a3f5b;
+        }
+
+        .twin-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.2rem;
+            font-size: 0.9rem;
+            background: rgba(255, 220, 235, 0.15);
+            padding: 0.15rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            flex-shrink: 0;
+        }
+
+        .twin-footer span {
+            animation: waveFloat 2.8s infinite alternate;
+            display: inline-block;
+        }
+
+        .love-note {
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            color: #b06a7e;
+            opacity: 0.5;
+            letter-spacing: 0.3px;
+            border-radius: 40px;
+            background: rgba(255, 200, 215, 0.12);
+            padding: 0.1rem 1rem;
+            display: inline-block;
+            backdrop-filter: blur(2px);
+            flex-shrink: 0;
+        }
+
+        /* ---- flip button ---- */
+        .flip-btn-wrapper {
+            margin-top: 0.4rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .flip-btn {
+            background: #f9e1ea;
+            border: none;
+            padding: 0.4rem 1.4rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #892f4d;
+            box-shadow: 0 3px 0 #c96f8a, 0 6px 14px rgba(190, 80, 110, 0.12);
+            transition: all 0.1s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .flip-btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 0px 0 #c96f8a, 0 6px 14px rgba(190, 80, 110, 0.08);
+        }
+
+        .flip-btn-purple {
+            background: #ede0f5;
+            box-shadow: 0 3px 0 #b38ac9, 0 6px 14px rgba(150, 100, 180, 0.12);
+            color: #5a2d6e;
+        }
+
+        .flip-btn-purple:active {
+            box-shadow: 0 0px 0 #b38ac9, 0 6px 14px rgba(150, 100, 180, 0.08);
+        }
+
+        /* ---- responsive ---- */
+        @media (max-width: 600px) {
+            .flip-front,
+            .flip-back {
+                padding: 1rem 0.8rem 1.2rem;
+                border-radius: 28px;
+                max-height: 94vh;
+                max-height: 94dvh;
+            }
+            .flip-back {
+                padding: 0.8rem 0.7rem 1rem;
+            }
+
+            .nose-icon {
+                font-size: 2.8rem;
+            }
+            .nose-title {
+                font-size: 1.3rem;
+            }
+            .nose-title .arabic {
+                font-size: 1.4rem;
+            }
+            .nose-emoji {
+                font-size: 2.8rem;
+            }
+            .nose-text {
+                font-size: 1.1rem;
+            }
+            .meme-box .meme-text {
+                font-size: 1.1rem;
+            }
+            .meme-box {
+                padding: 0.5rem 0.7rem;
+            }
+            .meme-emoji-row {
+                font-size: 1.6rem;
+                letter-spacing: 5px;
+            }
+            .power-item {
+                font-size: 0.7rem;
+                padding: 0.05rem 0.5rem;
+            }
+
+            .hbd-title {
+                font-size: 2.4rem;
+            }
+            .header-twins .twin-wave {
+                font-size: 2.2rem;
+            }
+            .twin-text {
+                font-size: 1rem;
+                padding: 0.05rem 0.7rem;
+            }
+            .kayan-name {
+                font-size: 1.4rem;
+            }
+            .message-box p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            .message-box {
+                padding: 0.5rem 0.7rem;
+            }
+            .closing-sentence p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+            .closing-sentence {
+                padding: 0.4rem 0.6rem;
+                margin: 0.2rem 0;
+            }
+            .bestie-badge {
+                padding: 0.15rem 0.6rem;
+                gap: 0.2rem;
+            }
+            .badge-emoji {
+                font-size: 1.1rem;
+            }
+            .badge-text {
+                font-size: 0.9rem;
+            }
+            .badge-heart {
+                font-size: 1.2rem;
+            }
+            .twin-badge-new {
+                font-size: 0.75rem;
+                padding: 0.05rem 0.5rem;
+            }
+            .twin-badge-new .wave-small {
+                font-size: 0.9rem;
+            }
+            .btn {
+                font-size: 0.8rem;
+                padding: 0.3rem 1rem;
+            }
+            .flip-btn {
+                font-size: 0.75rem;
+                padding: 0.3rem 1rem;
+            }
+            .sub-birthday {
+                font-size: 0.95rem;
+                padding: 0.05rem 1rem;
+                margin: 0.05rem 0 0.15rem;
+            }
+            .twin-message {
+                font-size: 0.85rem;
+                padding: 0.1rem 0.8rem;
+            }
+            .footer-note {
+                font-size: 0.7rem;
+                padding-top: 0.3rem;
+                margin-top: 0.3rem;
+            }
+            .twin-footer {
+                font-size: 0.8rem;
+                padding: 0.1rem 0.7rem;
+            }
+            .ride-or-die {
+                font-size: 0.9rem;
+                padding: 0.1rem 1rem;
+                margin: 0.1rem 0;
+            }
+            .love-note {
+                font-size: 0.65rem;
+                padding: 0.05rem 0.8rem;
+                margin-top: 0.2rem;
+            }
+            .heart-divider {
+                font-size: 1.3rem;
+                margin: 0.05rem 0 0.15rem;
+            }
+            .action-call {
+                gap: 0.3rem 0.6rem;
+                margin: 0.2rem 0 0.1rem;
+            }
+            .emoji-big {
+                font-size: 1.5rem;
+            }
+            .closing-sentence .big-heart {
+                font-size: 1rem;
+            }
+            .flip-btn-wrapper {
+                margin-top: 0.25rem;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .flip-front,
+            .flip-back {
+                padding: 0.6rem 0.5rem 0.8rem;
+                border-radius: 22px;
+                max-height: 92vh;
+                max-height: 92dvh;
+            }
+            .flip-back {
+                padding: 0.5rem 0.4rem 0.7rem;
+            }
+
+            .nose-icon {
+                font-size: 2.2rem;
+            }
+            .nose-title {
+                font-size: 1.1rem;
+            }
+            .nose-title .arabic {
+                font-size: 1.2rem;
+            }
+            .nose-emoji {
+                font-size: 2.2rem;
+            }
+            .nose-text {
+                font-size: 0.9rem;
+            }
+            .nose-graphic {
+                padding: 0.25rem;
+                gap: 0.15rem;
+            }
+            .meme-box .meme-text {
+                font-size: 0.95rem;
+            }
+            .meme-box {
+                padding: 0.3rem 0.5rem;
+            }
+            .meme-emoji-row {
+                font-size: 1.3rem;
+                letter-spacing: 4px;
+            }
+            .power-item {
+                font-size: 0.6rem;
+                padding: 0.05rem 0.35rem;
+            }
+            .power-item .power-emoji {
+                font-size: 0.65rem;
+            }
+
+            .hbd-title {
+                font-size: 1.8rem;
+            }
+            .header-twins .twin-wave {
+                font-size: 1.6rem;
+            }
+            .twin-text {
+                font-size: 0.8rem;
+                padding: 0.03rem 0.5rem;
+            }
+            .kayan-name {
+                font-size: 1.1rem;
+            }
+            .message-box p {
+                font-size: 0.78rem;
+                line-height: 1.4;
+            }
+            .message-box {
+                padding: 0.3rem 0.5rem;
+                margin: 0.1rem 0 0.15rem;
+            }
+            .closing-sentence p {
+                font-size: 0.72rem;
+                line-height: 1.4;
+            }
+            .closing-sentence {
+                padding: 0.25rem 0.4rem;
+                margin: 0.1rem 0;
+            }
+            .bestie-badge {
+                padding: 0.1rem 0.4rem;
+                gap: 0.15rem;
+                margin: 0.1rem 0 0.15rem;
+            }
+            .badge-emoji {
+                font-size: 0.9rem;
+            }
+            .badge-text {
+                font-size: 0.75rem;
+            }
+            .badge-heart {
+                font-size: 1rem;
+            }
+            .twin-badge-new {
+                font-size: 0.6rem;
+                padding: 0.03rem 0.35rem;
+            }
+            .twin-badge-new .wave-small {
+                font-size: 0.75rem;
+            }
+            .btn {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.8rem;
+            }
+            .flip-btn {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.7rem;
+            }
+            .sub-birthday {
+                font-size: 0.8rem;
+                padding: 0.03rem 0.8rem;
+                margin: 0.05rem 0 0.1rem;
+            }
+            .twin-message {
+                font-size: 0.7rem;
+                padding: 0.05rem 0.6rem;
+            }
+            .footer-note {
+                font-size: 0.6rem;
+                padding-top: 0.2rem;
+                margin-top: 0.2rem;
+            }
+            .twin-footer {
+                font-size: 0.65rem;
+                padding: 0.05rem 0.5rem;
+                margin-top: 0.1rem;
+            }
+            .ride-or-die {
+                font-size: 0.75rem;
+                padding: 0.05rem 0.8rem;
+                margin: 0.05rem 0;
+            }
+            .love-note {
+                font-size: 0.55rem;
+                padding: 0.03rem 0.6rem;
+                margin-top: 0.1rem;
+            }
+            .heart-divider {
+                font-size: 1rem;
+                margin: 0.03rem 0 0.1rem;
+            }
+            .action-call {
+                gap: 0.2rem 0.4rem;
+                margin: 0.15rem 0 0.05rem;
+            }
+            .emoji-big {
+                font-size: 1.2rem;
+            }
+            .closing-sentence .big-heart {
+                font-size: 0.85rem;
+            }
+            .flip-btn-wrapper {
+                margin-top: 0.15rem;
+                gap: 0.3rem;
+            }
+            .nose-footer-text {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-height: 650px) {
+            .flip-front,
+            .flip-back {
+                padding: 0.5rem 0.5rem 0.7rem;
+                max-height: 90vh;
+                max-height: 90dvh;
+            }
+            .flip-back {
+                padding: 0.4rem 0.4rem 0.6rem;
+            }
+            .hbd-title {
+                font-size: 1.8rem;
+            }
+            .message-box p {
+                font-size: 0.8rem;
+            }
+            .closing-sentence p {
+                font-size: 0.75rem;
+            }
+            .closing-sentence {
+                padding: 0.3rem 0.5rem;
+            }
+            .header-twins .twin-wave {
+                font-size: 1.8rem;
+            }
+            .twin-text {
+                font-size: 0.9rem;
+            }
+            .bestie-badge {
+                padding: 0.1rem 0.5rem;
+            }
+            .kayan-name {
+                font-size: 1.2rem;
+            }
+            .nose-icon {
+                font-size: 2.2rem;
+            }
+            .nose-text {
+                font-size: 1rem;
+            }
+            .meme-box .meme-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- sparkle background -->
+    <div class="sparkle-bg" aria-hidden="true">
+        <span style="top: 5%; left: 8%; width: 14px; height: 14px; animation-duration: 10s;"></span>
+        <span style="top: 15%; right: 10%; width: 18px; height: 18px; animation-duration: 13s;"></span>
+        <span style="bottom: 20%; left: 5%; width: 10px; height: 10px; animation-duration: 11s;"></span>
+        <span style="top: 50%; right: 5%; width: 14px; height: 14px; animation-duration: 8s;"></span>
+        <span style="bottom: 10%; right: 18%; width: 12px; height: 12px; animation-duration: 14s;"></span>
+        <span style="top: 35%; left: 15%; width: 8px; height: 8px; animation-duration: 16s;"></span>
+        <span style="bottom: 35%; left: 70%; width: 12px; height: 12px; animation-duration: 9s;"></span>
+        <span style="top: 75%; left: 40%; width: 10px; height: 10px; animation-duration: 12s;"></span>
+    </div>
+
+    <!-- flip container -->
+    <div class="flip-container">
+        <div class="flip-inner" id="flipInner">
+
+            <!-- ===== PAGE 1: FUNNY NOSE (front) ===== -->
+            <div class="flip-front">
+                <div class="nose-icon">🤣</div>
+                <div class="nose-title">
+                    الحمدلله على السلامة
+                    <span class="arabic">👃</span>
+                </div>
+
+                <div class="nose-graphic">
+                    <span class="nose-emoji">👃</span>
+                    <span class="nose-text">مبــــرووك الخشــــم الجــــديد</span>
+                    <span class="nose-emoji" style="animation-delay: 0.5s;">👃</span>
+                </div>
+
+                <div class="meme-box">
+                    <div class="meme-text">
+                        <span class="highlight-orange">look at what i can do</span>
+                        <br>
+                        <span style="font-size: 1rem;">ever since i got my new nose 👃✨</span>
+                    </div>
+                </div>
+
+                <div class="powers-box">
+                    <span class="power-item"><span class="power-emoji">👃</span> smell from 10km away</span>
+                    <span class="power-item"><span class="power-emoji">🦸‍♀️</span> super sniff power</span>
+                    <span class="power-item"><span class="power-emoji">✨</span> nose glow up</span>
+                    <span class="power-item"><span class="power-emoji">😤</span> sass level 100</span>
+                </div>
+
+                <div class="meme-emoji-row">
+                    🤣 💀 😭 ✨
+                </div>
+
+                <div class="nose-footer-text">
+                    <span class="heart-pulse">💕</span>
+                    love you and your new nose bestie
+                    <span class="heart-pulse">💕</span>
+                </div>
+
+                <div class="flip-btn-wrapper">
+                    <button class="flip-btn flip-btn-purple" onclick="flipCard()">
+                        <span>🎂</span> روح للصفحة الثانية
+                    </button>
+                </div>
+            </div>
+
+            <!-- ===== PAGE 2: BIRTHDAY (back) - ALL LINES VISIBLE ===== -->
+            <div class="flip-back">
+                <div class="header-twins">
+                    <span class="twin-wave" aria-hidden="true">🌊</span>
+                    <span class="twin-text">Tsunami twin</span>
+                    <span class="twin-wave" aria-hidden="true" style="animation-delay: 0.3s;">🌊</span>
+                </div>
+
+                <div class="hbd-title">
+                    <span class="name-glow">HBD</span>
+                    <span style="display: inline-block; margin-left: 0.1rem;">🎈</span>
+                </div>
+
+                <div class="sub-birthday">
+                    ✦ my sweetest bestie ✦
+                </div>
+
+                <div class="bestie-badge">
+                    <span class="badge-emoji">🎁</span>
+                    <span class="badge-text">for</span>
+                    <span class="kayan-name">Kayan</span>
+                    <span class="badge-heart">💖</span>
+                    <span class="twin-badge-new">
+                        <span class="wave-small">🌊</span> twin
+                    </span>
+                </div>
+
+                <div class="heart-divider" aria-hidden="true">♡ ✿ ♡ ✿ ♡</div>
+
+                <div class="message-box">
+                    <p>
+                        <span class="emoji-big" aria-hidden="true">🌟</span>
+                        Happy Birthday to my
+                        <span class="highlight">absolute best friend</span>
+                        <span style="font-weight: 700;">Yani</span>!
+                        <br>
+                        <span style="display: inline-block; margin-top: 0.2rem;">
+                            You make life brighter, funnier, and so much sweeter.
+                            <span aria-hidden="true">🍰</span>
+                        </span>
+                        <br>
+                        <span style="display: inline-block; margin-top: 0.2rem; font-size: 1.3rem; letter-spacing: 2px;">
+                            🥳🎉🎊
+                        </span>
+                    </p>
+                </div>
+
+                <div class="twin-message">
+                    <span class="wave-icon" aria-hidden="true">🌊</span>
+                    from your Tsunami twin, with all the love
+                    <span class="wave-icon" aria-hidden="true" style="animation-delay: 0.5s;">🌊</span>
+                </div>
+
+                <div class="ride-or-die">
+                    <span aria-hidden="true">💕</span> ride-or-die twin <span aria-hidden="true">💕</span>
+                </div>
+
+                <div class="closing-sentence">
+                    <p>
+                        <span class="big-heart">💖</span>
+                        Yani, you are not just my best friend — you are my
+                        <span class="highlight-purple">safe place</span>, my
+                        <span class="highlight-gold">greatest cheerleader</span>, and the
+                        <span class="highlight-pink">sister I chose</span> for myself.
+                        <br><br>
+                        Through every high and every low, your
+                        <span class="highlight-gold">light</span> has never stopped shining,
+                        and your <span class="highlight-pink">kindness</span> has touched more hearts
+                        than you'll ever know.
+                        <br><br>
+                        I hope this year brings you everything your
+                        <span class="highlight-purple">beautiful soul</span> deserves —
+                        <span class="highlight-gold">endless laughter</span>,
+                        <span class="highlight-pink">unforgettable moments</span>, and the
+                        <span class="highlight-gold">deepest love</span>.
+                        <br><br>
+                        Thank you for being <span class="highlight-pink">YOU</span> —
+                        <span class="highlight-purple">flawsome</span>,
+                        <span class="highlight-gold">powerful</span>, and
+                        <span class="highlight-pink">absolutely irreplaceable</span>.
+                        <br>
+                        <span style="font-size: 1.5rem; display: inline-block; margin-top: 0.15rem;">🌊🤝🌊</span>
+                        <br>
+                        <span style="font-size: 0.95rem; color: #b34b6e; font-weight: 600;">
+                            Always your twin, always by your side.
+                            <span class="big-heart" style="font-size: 1rem;">💕</span>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="action-call">
+                    <span class="btn" aria-label="celebrate">
+                        <span class="btn-emoji" aria-hidden="true">💖</span> you're my favorite
+                    </span>
+                    <span class="btn" aria-label="party">
+                        <span class="btn-emoji" aria-hidden="true">🌊</span> twins forever
+                    </span>
+                </div>
+
+                <div class="footer-note">
+                    <span aria-hidden="true">✨</span>
+                    <strong>Yani</strong>
+                    <span>·</span>
+                    <span>you are the best</span>
+                    <span aria-hidden="true">✨</span>
+                    <span style="display: inline-flex; gap: 0.1rem;">
+                        <span aria-hidden="true">🎁</span>
+                        <span aria-hidden="true">🎈</span>
+                    </span>
+                </div>
+
+                <div class="twin-footer">
+                    <span aria-hidden="true">🌊</span>
+                    <span style="font-weight: 600;">always your twin</span>
+                    <span aria-hidden="true">🌊</span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">· forever</span>
+                </div>
+
+                <div class="love-note">
+                    <span aria-hidden="true">💌</span> love you, bestie <span aria-hidden="true">💌</span>
+                </div>
+
+                <div class="flip-btn-wrapper">
+                    <button class="flip-btn" onclick="flipCard()">
+                        <span>👃</span> العودة للصفحة الأولى
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function flipCard() {
+            const inner = document.getElementById('flipInner');
+            inner.classList.toggle('flipped');
+        }
+    </script>
+
+</body>
+</html>
